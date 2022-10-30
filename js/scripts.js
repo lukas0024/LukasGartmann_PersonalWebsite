@@ -50,38 +50,13 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
 });
 
-// Kontaktieren Sie mich
-/*const form = document.querySelector(".contact-form");
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-    let name = document.querySelector(".name").value;
-    let email = document.querySelector(".email").value;
-  
-    
+const skillBars = document.getElementsByClassName('skill-bars');
+skillBars.onscroll = function () {
+    var windowHeight = $(window).height() *2;
+    if (document.documentElement.scrollTop > windowHeight) {
+        document.getElementsByClassName("skill-bars").className = "slideUp";
+    }
 
-
-    document.querySelector(".contactForm").reset();
-
-    sendEmail(name, email);
-  })
-  function sendEmail(name, email){
-    Email.send({
-        
-      Host: "smtp.elasticemail.com", 
-      Username: "lukas@gartmann.ag",
-      Password: "36B775EE57D034BE2A620320F072C659F883",
-      To: "lukas@gartmann.ag",
-      From: "lukas@gartmann.ag",
-      Subject: `${name} Just messaged you from the website form`,
-      Body: `Name: ${name} <br> Email: ${email} <br>`,
-    }).then((success) => {
-     
-      alert("message sent successfully. Please check the spam folder in your mail.");
-    }).catch((error) => {
-        
-      alert("error sending message");
-    })
-  }*/
+}
